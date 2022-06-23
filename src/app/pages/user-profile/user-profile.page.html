@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="page-title">Welcome Back !</ion-title>
+      <ion-button (click)="logout()" class="close-btn" color="primary">Logout</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center-items">
+    <ion-button (click)="openIonModal()" class="new-btn">+</ion-button>
+
+    <div class="loader" *ngIf="loading; else loaded">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ng-template #loaded>
+
+      <div *ngFor="let schedule of schedules" class="schedule-card">
+
+        <img src="/assets/icon/thumbnail.png" alt="thumbnail">
+
+        <div class="schedule-details">
+          <span class="schedule-title">{{schedule.medication.name}}</span>
+
+          <div class="schedule-occ">
+            <p>To Take</p>
+            <span *ngIf="schedule.daily;">daily</span>
+            <span *ngIf="schedule.weekly;">weekly</span>
+            <span *ngIf="schedule.monthly;">monthly</span>
+          </div>
+
+          <div class="schedule-times">
+            <img src="/assets/icon/clock.png" alt="clock">
+            <div *ngFor="let time of schedule.times">
+              <p>{{time}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+
+    <div id="notification">
+      <span *ngIf="modalData">{{modalData}}</span>
+    </div>
+
+  </div>
+</ion-content>

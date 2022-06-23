@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="center-items">
+
+    <ion-title class="auth-title" color="primary">Register Now!</ion-title>
+
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="form">
+      <ion-item class="input-grp">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" formControlName="name" class="input" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-grp">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email" class="input" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-grp">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" class="input" required></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" color="primary" class="primary-btn">Sign Up</ion-button>
+    </form>
+
+  </div>
+</ion-content>

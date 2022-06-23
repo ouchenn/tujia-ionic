@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="page-title">Set Reminder</ion-title>
+    <ion-button (click)="closeModal()" class="close-btn" color="primary">Cancel</ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div class="center-items">
+    <form [formGroup]="reminderForm" (ngSubmit)="saveReminder()" [ngSwitch]="currentStep" class="form">
+
+      <ion-item-group *ngSwitchCase="'pick-med-occ'">
+        <ion-item class="input-grp">
+          <ion-select placeholder="Select A Medication" (ionChange)="onMedSelect($event)" class="select">
+            <ion-select-option *ngFor="let med of medications" [value]="med">
+              {{med.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="input-grp">
+          <ion-select interface="popover" placeholder="Select Occurence" (ionChange)="onoccurrenceSelect($event)"
+            class="select">
+            <ion-select-option value="daily" class="opt">Daily</ion-select-option>
+            <ion-select-option value="weekly" class="opt">Weekly</ion-select-option>
+            <ion-select-option value="monthly" class="opt">Monthly</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-buttons class="step-btns">
+          <ion-button class="btn next-btn" color="primary" (click)="changeStep('pick-med-occ', 'forward')">Next
+          </ion-button>
+        </ion-buttons>
+
+      </ion-item-group>
+
+      <ion-item-group *ngSwitchCase="'pick-time'">
+        <label class="label">Set times to take the medicine</label>
+
+        <ion-item class="input-grp">
+          <ion-button (click)="minusTimesFields()" class="minus-btn">-</ion-button>
+          <input type="number" [value]="counter" class="input counter" readonly>
+          <ion-button (click)="plusTimesFields()" class="plus-btn">+</ion-button>
+        </ion-item>
+
+        <ion-item-group id="times"></ion-item-group>
+
+        <ion-buttons class="step-btns">
+          <ion-button class="btn back-btn" color="primary" (click)="changeStep('pick-time', 'back')">Back</ion-button>
+        </ion-buttons>
+
+        <ion-button type="submit" class="btn btn-submit" color="primary">Submit</ion-button>
+      </ion-item-group>
+
+    </form>
+  </div>
+</ion-content>

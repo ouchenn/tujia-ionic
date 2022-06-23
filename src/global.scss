@@ -1,0 +1,358 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+* {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Raleway";
+}
+
+$primary: #5f6ac4;
+$bg-primary: #181824;
+$bg-secondary: #272831;
+$txt-secondary: #807f85;
+
+.header {
+  --background: $primary;
+}
+
+.page-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.center-items {
+  display: grid;
+  align-content: center;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  height: -webkit-fill-available;
+}
+
+.auth-title {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 30px;
+}
+
+.pre-auth-sub {
+  margin: 30px 0px;
+}
+
+.auth-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+.btn {
+  --border-radius: 8px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.primary-btn {
+  @extend .btn;
+}
+
+.secondary-btn {
+  @extend .btn;
+  --background: #fff;
+  color: $primary;
+}
+
+.new-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0px 30px 50px 0px;
+  font-size: 50px;
+  font-weight: 300;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  text-align: center;
+  --border-radius: 50%;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 10px 30px 0px 0px;
+  --box-shadow: none;
+  --border-radius: 8px;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+  text-transform: capitalize;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.btn-submit {
+  margin-top: 25px;
+}
+
+.step-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+.next-btn {
+  grid-column-start: 2;
+  justify-self: self-end;
+}
+
+.back-btn {
+  grid-column-start: 1;
+  justify-self: self-start;
+}
+
+.minus-btn,
+.plus-btn {
+  width: 30px;
+  height: 30px;
+  --background: #6e74a0;
+  --border-radius: 50%;
+  --padding: 8px;
+  --text-align: center;
+}
+
+.counter {
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: #807f85;
+  background-color: $bg-secondary;
+  border: 0px solid;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  width: -webkit-fill-available;
+}
+
+#times {
+  margin: 20px 0px;
+}
+
+.input-time {
+  --padding-start: 50px;
+}
+
+.form {
+  width: 100%;
+}
+
+.label {
+  --color: #807f85;
+  font-family: inherit !important;
+  font-weight: 400 !important;
+}
+
+.input-grp {
+  margin: 30px 0;
+  --background: #272831;
+  --highlight-background: #5f6ac4;
+  --highlight-color-valid: #5f6ac4;
+  --highlight-color-invalid: #5f6ac4;
+  --border-radius: 8px;
+  --border-width: 0px;
+  --min-height: 52px;
+  --full-highlight-height: none;
+  --color: #807f85;
+  font-family: inherit !important;
+  font-weight: 500 !important;
+}
+
+.select {
+  --placeholder-color: #807f85;
+  --placeholder-opacity: 1;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 400;
+  padding: 0px;
+}
+
+.opt {
+  --background: #272831 !important;
+  color: #807f85;
+  font-size: 500;
+}
+
+.pre-auth-title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.schedule-card {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  background-color: $bg-secondary;
+  padding: 0 10px;
+  border-radius: 15px;
+  margin: 20px 0;
+
+  img {
+    height: 60px;
+  }
+
+  .schedule-details {
+    display: inline-grid;
+    width: -webkit-fill-available;
+    text-align: initial;
+    padding: 30px 20px 30px;
+  }
+}
+
+.schedule-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: $primary;
+}
+
+.schedule-occ {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  p {
+    font-size: 14px;
+    font-style: italic;
+    color: $txt-secondary;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+  }
+}
+
+.schedule-times {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  img {
+    height: 15px;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    color: $primary;
+  }
+}
+
+.loader {
+  display: inline-block;
+  font-size: 0px;
+  padding: 0px;
+}
+
+.loader span {
+  vertical-align: middle;
+  border-radius: 100%;
+
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 6px 4px;
+  -webkit-animation: loader1 0.8s linear infinite alternate;
+  animation: loader1 0.8s linear infinite alternate;
+}
+
+.loader span:nth-child(1) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  background: rgb(95, 106, 196, 0.6);
+}
+
+.loader span:nth-child(2) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+  background: rgb(95, 107, 196, 0.8);
+}
+
+.loader span:nth-child(3) {
+  -webkit-animation-delay: -0.26666s;
+  animation-delay: -0.26666s;
+  background: rgb(95, 106, 196, 1);
+}
+
+.loader span:nth-child(4) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+  background: rgb(95, 106, 196, 0.8);
+}
+
+.loader span:nth-child(5) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  background: rgb(95, 106, 196, 0.4);
+}
+
+@keyframes loader1 {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes loader1 {
+  from {
+    -webkit-transform: scale(0, 0);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+  }
+}
